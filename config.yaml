@@ -1,0 +1,39 @@
+main:
+  path: main.py
+  # 描述
+
+  describe: 传统分类器：最大熵模型/逻辑斯蒂回归 进行全/半分类
+
+  name: &name word_count
+
+  model: &model bow + stop_word
+
+  max_features: 2000
+
+  max_keywords: 2000
+
+  full_mode: False
+
+  remove_stopword: True
+
+  train_data_file_path: TaskAA_all_data_3000(1).csv  #全体训练集
+  #train_data_half_2090.csv
+  #train_data_full_2090.csv
+  test_data_file_path: TaskA_all_testdata_14966.csv  #全体测试集
+  #data_896_half_result.csv
+  #data_896_vote.csv
+  #data_896_result.csv
+  #data_half_896_vote.csv
+
+  step1_file_path: TaskA_all_testdata_M_14966.csv
+  #data_896_result_candidate_L.csv
+  #data_896_result_candidate_H.csv
+  #data_896_result_candidate_L.csv
+  #data_896_result_candidate_M.csv  #M 候选
+
+
+#  结果输出到...
+  result_file_path: ['./',*name,'_',*model,'.csv']
+  # 使用什么模型：TFIDF 或者 BOW
+  # 日志文件路径
+  log_file_path: ['./',*name,'_',*model,'.log']
